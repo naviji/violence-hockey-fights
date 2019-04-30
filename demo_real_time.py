@@ -21,9 +21,9 @@ seq_length = 40
 fname_ext = os.path.basename(sys.argv[1])
 fname = fname_ext.split('.')[0]
 
-if (not os.path.isfile(fname_ext)):
-    print("No file found!")
-    exit()
+# if (not os.path.isfile(fname_ext)):
+#     print("No file found!")
+#     exit()
 
 call(["ffmpeg", "-i", sys.argv[1], "-r", str(seq_length), os.path.join('data/extracted_frames', fname + '-%04d.jpg')])
 
@@ -78,8 +78,8 @@ def animate(args):
     return plt.plot(x, y, color='r')
 
 
-anim = animation.FuncAnimation(fig, animate, frames=frame, interval=1000, repeat=False)
 fig = plt.figure()
+anim = animation.FuncAnimation(fig, animate, frames=frame, interval=1000, repeat=False)
 plt.xlabel('time(s)')
 plt.ylabel('violence')
 plt.title('Violence in video')
