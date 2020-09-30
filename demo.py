@@ -13,7 +13,6 @@ if len(sys.argv) == 1:
     print("No args! exiting")
     exit()
 
-# shape that lstm expects is (40, 2048)
 seq_length = 40
 
 # load trained lstm custom model
